@@ -1,0 +1,27 @@
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import java.net.URL?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+
+<?scenebuilder-stylesheet /css/style.scc?>
+
+<VBox fx:id="vBox" fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml" alignment="center" >
+    <stylesheets><URL value="@/css/Style.css"/> </stylesheets>
+
+    <MenuBar>
+        <Menu text="File">
+            <Menu text="Close"/>
+        </Menu>
+        <Menu text="Chat"/>
+    </MenuBar>
+
+    <TextArea fx:id="textArea" editable="false" VBox.vgrow="ALWAYS"/>
+    <HBox prefHeight="40" alignment="center">
+        <TextField fx:id="textField" onAction="#sendMessage" HBox.hgrow="ALWAYS" prefHeight="40" promptText="Write a message..." />
+        <Button fx:id="buttonSent" onAction="#sendMessage" prefHeight="40" prefWidth="43" />
+    </HBox>
+</VBox>
